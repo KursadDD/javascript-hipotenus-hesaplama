@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipotenüs Hesapla</title>
+    <style>
+        div {
+            margin: auto;
+            margin-top: 50px;
+
+            width: 300px;
+            height: 200px;
+        }
+
+        input {
+            margin-left: 50px;
+        }
+
+        button {
+            margin-left: 100px;
+
+        }
+
+        p {
+            width: 120px;
+            height: 20px;
+            margin-left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input class="text" type="text" name="dik-kenar1" id="dik-kenar1">
+        <br><br>
+        <input class="text" type="text" name="dik-kenar2" id="dik-kenar2">
+        <br><br>
+        <button id="btn" onclick="hesapla()">Hesapla</button>
+        <br><br>
+        <p id="sonuc"></p>
+    </div>
+    <script>
+        function hesapla() {
+            const dik1 = Number(document.getElementById("dik-kenar1").value);
+            const dik2 = Number(document.getElementById("dik-kenar2").value);
+            const hipo = ((dik1) ** 2 + (dik2) ** 2) ** (0.5);
+            document.getElementById("sonuc").innerHTML = "Hipotenüs:" + hipo;
+        }
+    </script>
+</body>
+
+</html>
