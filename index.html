@@ -33,7 +33,6 @@
 
 <body>
     <div>
-        
         <label>Dik kenar 1: </label>
         <input class="text" type="text" name="dik-kenar1" id="dik-kenar1">
         <br><br>
@@ -48,8 +47,14 @@
         function hesapla() {
             const dik1 = Number(document.getElementById("dik-kenar1").value);
             const dik2 = Number(document.getElementById("dik-kenar2").value);
-            const hipo = ((dik1) ** 2 + (dik2) ** 2) ** (0.5);
-            document.getElementById("sonuc").innerHTML = "Hipotenüs:" + hipo;
+            if (isNaN(dik1) == true || isNaN(dik2) == true) {
+                window.alert("Lütfen geçerli bir sayı giriniz.")
+            } else if (dik1 <= 0 || dik2 <= 0) {
+                window.alert("Uzunluk negatif sayı olamaz.")
+            } else {
+                const hipo = ((dik1) ** 2 + (dik2) ** 2) ** (0.5);
+                document.getElementById("sonuc").innerHTML = "Hipotenüs:" + hipo;
+            }
         }
     </script>
 </body>
