@@ -9,9 +9,7 @@
         div {
             margin: auto;
             margin-top: 50px;
-
-            width: 311px;
-            height: 200px;
+            width: 300px;
         }
 
         input {
@@ -19,7 +17,7 @@
         }
 
         button {
-            margin-left: 100px;
+            margin-left: 70px;
 
         }
 
@@ -33,22 +31,24 @@
 
 <body>
     <div>
-        <label>Dik kenar 1: </label>
-        <input class="text" type="text" name="dik-kenar1" id="dik-kenar1">
+        <input class="text" type="text" name="dik-kenar1" id="dik-kenar1" value="Birinci dik kenar"
+            onclick="if (this.value != '') this.value = '';">
         <br><br>
-        <label>Dik kenar 1: </label>
-        <input class="text" type="text" name="dik-kenar2" id="dik-kenar2">
+        <input class="text" type="text" name="dik-kenar2" id="dik-kenar2" value="İkinci dik kenar"
+            onclick="if (this.value != '') this.value = '';">
         <br><br>
         <button id="btn" onclick="hesapla()">Hesapla</button>
         <br><br>
         <p id="sonuc"></p>
     </div>
+
     <script>
         function hesapla() {
             const dik1 = Number(document.getElementById("dik-kenar1").value);
             const dik2 = Number(document.getElementById("dik-kenar2").value);
             if (isNaN(dik1) == true || isNaN(dik2) == true) {
                 window.alert("Lütfen geçerli bir sayı giriniz.")
+
             } else if (dik1 <= 0 || dik2 <= 0) {
                 window.alert("Uzunluk negatif sayı olamaz.")
             } else {
